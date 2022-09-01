@@ -1,17 +1,54 @@
 @extends('layouts.app')
 @section('content')
 
+<link rel="stylesheet" href="css/imageScrolling.css">
+<script src="js/testEffect.jquery.js"></script>
+<script src="{{ asset('js/textEffect.jquery.js') }}" defer></script>
+
+<!--
 <section>
 
       <div class="container">
         
         <div class="row">
           <div class="col-md-12">
-             <hr><center><h3 style="color: green;"><b>About Me</b></h3></center><hr/>
+             <hr><center><h3 style="color:#0A84AC;letter-spacing: 8px;text-shadow: .2em .2em .1em gray;"><b>ABOUT ME</b></h3></center>
 
           </div>
         </div>
       </div>
+</section>
+-->
+<section>
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-12">
+             <center><h3 style="color:#0A84AC;letter-spacing: 8px;"><b>ABOUT ME</b></h3></center>
+
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+<section>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+          <p id="demo1"> Random Effects Example book is your faithful friend..! কৃতজ্ঞতা কি কখনো ভালোবাসা থেকে জন্মায় ? কৃতজ্ঞতা মানুষকে নম্র করে হয়তো, সেই নম্রতা  সইতে শেখায়। সয়ে গেলে এক সময় ভালোবাসা তৈরী হয়ে যায়!!</p>
+
+          <script> 
+          jQuery(document).ready(function($) {
+          $('#demo1').textEffect();
+          });
+          </script>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section>
@@ -20,68 +57,98 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-            		<img src="images/shamol.jpg" class="img-thumbnail" >   
+                <img src="images/shamol.jpg" class="img-thumbnail" >   
                 </div>
                 <div class="col-md-6">
-					<div id="contentDiv"></div>
-				</div>
+                     
+                      <h3 id="demo2">Web Application Development</h3>
+                      <script>
+                        jQuery(document).ready(function($) {
+                        $('#demo2').textEffect({
+                        effect: 'jumble', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+                        effectSpeed: 250, // the speed in ms at which new letters begin to animate.
+                        completionSpeed: 3000, // the speed in ms of the text aniamtion.
+                        jumbleColor: '#7f7f7f' // the color of the jumbled letters.
+                        });
+                        });
+                      </script>
+                      <h3 id="demo3">StartUp Company Website & Planning</h3>
+                      <h3 id="demo4">Software Development</h3>
+                      <h3 id="demo5">Application Development </h3>
+                    
+                </div>
             </div>
         </div>
 
 </section>
 
-<script>
-const printSentence = (id, sentence, speed = 50) => {
-  let index = 0;
-  let element = document.getElementById(id);
-  
-  let timer = setInterval(function() {
-    const char = sentence[index];
-    
-    if (char === '<') {
-      index = sentence.indexOf('>', index);  // skip to greater-than
-    }
-    
-    element.innerHTML = sentence.slice(0, index);
-    
-    if (++index === sentence.length) {
-      clearInterval(timer);
-    }
-  }, speed);
-} // printSentence
 
-printSentence(
-  'contentDiv',
-  'ভরসা রাখুন আপনার যেকোনো ধরনের জরুরী ডকুমেন্ট ডেলিভারির জন্য Jet Courier BD আছে আপনার বিশ্বস্ত সহযোগী হিসেবে।<strong>Jet Courier BD</strong>.<p>ঢাকার যেকোন প্রান্তে প্রোডাক্ট ডেলিভারি, Jet  Courierbd এর সাথে হবে আরও জলদি। আমাদের সুপার ফাস্ট ডেলিভারি সার্ভিস নিয়ে Inside Dhaka প্রোডাক্ট পৌঁছে যাবে কাস্টমারের দরজায়, মাত্র ২৪ঘন্টায়!</p><ul><li>এক্সপ্রেস ডেলিভারি অপশনের মাধ্যমে ৪-৬ ঘন্টার মধ্যে ডেলিভারির জন্য পাবেন। (শুধুমাত্র ঢাকায়)।<li>আমরা ক্যাশ অন ডেলিভারি অর্থাৎ কোন রকম অ্যাডভান্স না দিয়ে ডেলিভারির সময় ক্যাশ প্রদান করে ডেলিভারি রিসিভ করার সুবিধা দিয়ে থাকি।<li>আপনার সকল প্রয়োজনে অথবা জিজ্ঞাসায় আছে কল সেন্টার সাপোর্ট সেন্টার।<li>আপনার ব্যবসার বিশ্বস্ত ও আদর্শ ডেলিভারি সিস্টেম আপনি পাচ্ছেন সিটি এরিয়ার মধ্যে সবচেয়ে দ্রুত ডেলিভারি<li>পার্সেলে আস্থা রাখুন নির্ভয়ে<li>#FastDelivery #SafetyFirst<li>আপনার প্রয়োজনীয় তাই আমাদের কাছে সবচেয়ে বেশি গুরুত্বপূর্ণ।</ul><table><tr><th>Thank You<th>...<tr><td>Connected Us<td>for more information</table>',
-  50
-);
+<script>
+jQuery(document).ready(function($) {
+$('#demo3').textEffect({
+effect: 'fade', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+effectSpeed: 200, // the speed in ms at which new letters begin to animate.
+completionSpeed: 6000, // the speed in ms of the text aniamtion.
+jumbleColor: '#7f7f7f' 
+});
+});
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script>
+jQuery(document).ready(function($) {
+$('#demo4').textEffect({
+effect: 'slide', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+
+});
+});
+</script>
+
+
+<script>
+jQuery(document).ready(function($) {
+$('#demo5').textEffect({
+effect: 'dropdown', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+effectSpeed: 100, // the speed in ms at which new letters begin to animate.
+completionSpeed: 6000, // the speed in ms of the text aniamtion.
+jumbleColor: '#7f7f7f' 
+
+});
+});
+</script>
+
+
+<br><br>
 
 <section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-			</div>
-			<div class="col-md-6">
-				<dl>
-					<dt>Bread</dt>
-					<dd>A baked food made of flour.</dd>
-					<dt>Coffee</dt>
-					<dd>A drink made from roasted coffee beans.</dd>
-				</dl>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section>
-	 <div class="container">
-	
-		      
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+      <strong><h4><i class='fas fa-seedling'></i>Professional Affiliations</h4></strong>
+        <menu>
+          <ol type="disc">
+            <li>Advisory Board,Regulation Review. Advisory Board,Regulation Review</li> 
+            <li>Board of Director of Advisory Board,Regulation Review.</li> 
+            
+            <li>Advisory Board, Food and Drug Law Institute.</li> 
+            <li>etc</li>
+          </ol>
+        </menu>
+      </div>
+   
+      <div class="col-md-6">
+        <strong><h4><i class='far fa-object-group'></i>Honors & Awards</h4></strong>
+        <ol>
+          <dt>UnderGraduate</dt>
+          <dd>BSc(Engr) In Computer Science & Engineering at Hajee Mohammad Danesh Science & Technology University. .</dd>
+          <dt>Higher Seconadary</dt>
+          <dd>Joypurhat Government Collge in Science Group.</dd>
+        </ol>
+      </div>
+      
+      
+      
     </div>
-	
+  </div>
 </section>
 
 @endsection

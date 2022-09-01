@@ -11,8 +11,8 @@
  <div class="col-md-8">
  <div class="card">
  <div class="card-body">
- <p><b>{{ $post->title }}</b></p>
- <p>
+ <h5><b>Title:{{ $post->title }}</b></h5>
+ <p><b>Description:</b>
  {{ $post->body }}
  </p>
  <hr />

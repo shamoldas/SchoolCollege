@@ -1,39 +1,27 @@
 @extends('layouts.app')
 @section('content')
+
+
+
+<section>
 <div class="container">
-<div class="row justify-content-center">
-<div class="col-md-10">
-<table class="table table-striped">
-<thead>
-<th>ID</th>
-<th>Title</th>
-<th>Body</th>
-<th>Action</th>
-</thead>
-<tbody>
-@foreach($posts as $post)
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="row">
+              @foreach ($posts as $posts)
 
-@if($post->id==1)
-<tr>
-<td>{{ $post->id }}</td>
-<td>{{ $post->title }}</td>
-<td>{{ $post->body }}</td>
-<td>
-<a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">Show Post</a>
-</td>
-</tr>
-@endif
-@endforeach
-</tbody>
-</table>
-</div>
-</div>
+                    <h5><b>Book Name:</b>{{ $posts->title }}</h5>
+                    <p style="text-align: justify;"><strong>Description:</strong>{{ $posts->body }}</p>
+                    <div class="pull-right">
+                    	<a class="btn btn-info" href="" class="btn btn-primary">Comment</a>
+                    </div>
+                    <hr>        
 
-	<ul class="pagination">
-		
-		<li class="page-item"><a class="page-link" href="{{$posts->previouspageUrl()}}">Previous</a></li>
-		<li class="page-item"><a class="page-link" href="{{$posts->nextpageUrl()}}">Next</a></li>
-	</ul>
-
+                @endforeach
+            </div> 
+        </div>
+    </div>
 </div>
+</section>
+
 @endsection
